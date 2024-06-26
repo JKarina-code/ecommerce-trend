@@ -8,15 +8,15 @@ import { useSideMenu } from "@/store/ui/ui-store";
 const menuItems = [
   {
     name: "Women",
-    path: "/category/women",
+    path: "/gender/women",
   },
   {
     name: "Men",
-    path: "/category/men",
+    path: "/gender/men",
   },
   {
     name: "Kid",
-    path: "/category/kid",
+    path: "/gender/kid",
   },
 ];
 
