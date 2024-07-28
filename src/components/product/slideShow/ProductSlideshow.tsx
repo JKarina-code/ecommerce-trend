@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Swiper as SwiperObject } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";

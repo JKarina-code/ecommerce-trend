@@ -1,16 +1,18 @@
 import { notFound } from "next/navigation";
-import { initialData } from "@/seed/seed";
 import { titleFont } from "@/config/fonts";
-import { ProductSlideshow, SizeSelector, QuantitySelector } from "@/components";
+import { ProductSlideshow } from "@/components";
+import { getProductBySlug } from "@/actions";
+import { AddToCart } from "./ui/AddToCart";
 
 interface Props {
   params: {
     slug: string;
   };
 }
-export default function ProductPage({ params }: Props) {
+
+export default async function ProductPage({ params }: Props) {
   const { slug } = params;
-  const product = initialData.products.find((product) => product.slug === slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();
@@ -32,15 +34,7 @@ export default function ProductPage({ params }: Props) {
           {product.title}
         </h1>
         <p className="text-lg mb-5">${product.price}</p>
-
-        <SizeSelector
-          selectSize={product.sizes[0]}
-          availableSizes={product.sizes}
-        />
-
-        <QuantitySelector quantity={2} />
-        
-        <button className="btn-primary my-5">Add to cart</button>
+        <AddToCart product={product}/>
         <h3 className="font-bold text-sm">Description</h3>
         <p className="font-light">{product.description}</p>
       </div>

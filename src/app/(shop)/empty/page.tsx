@@ -11,7 +11,7 @@ export default function EmptyPage() {
           Your cart is empty. Go to the store and buy some items.
         </h1>
 
-        <Link href="/" className="text-blue-500 mt-2 text-4xl">
+        <Link href="/" className="text-blue-500 mt-2 text-4xl hover:underline ">
           Back
         </Link>
       </div>

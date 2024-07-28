@@ -1,5 +1,4 @@
 export const revalidate = 60;
-
 import { Title, ProductGrid, Pagination } from "@/components";
 import { getPaginationProducts } from "@/actions/product/product-pagination";
 import { redirect } from "next/navigation";
